@@ -3,14 +3,26 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "lint": "eslint --ext .js pages components tests",
+    "lint:fix": "eslint --fix --ext .js pages components tests"
   },
   "dependencies": {
     "@zeit/next-less": "^0.1.2",
     "less": "^3.0.1",
     "next": "^6.0.0-canary.3",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "sw-precache-webpack-plugin": "^0.11.5"
+    "react-dom": "^16.3.1"
+  },
+  "devDependencies": {
+    "@zeit/next-less": "^0.1.2",
+    "sw-precache-webpack-plugin": "^0.11.5",
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-compat": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
   }
 }

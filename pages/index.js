@@ -1,7 +1,8 @@
-import Link from 'next/link'
-import Head from '../components/head'
+import React from 'react';
+import Link from 'next/link';
+import Head from '../components/head';
 import Nav from '../components/nav';
-import css from "../styles/styles.less";
+import css from '../styles/styles.less';
 
 
 export default class extends React.PureComponent {
@@ -9,23 +10,24 @@ export default class extends React.PureComponent {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('/service-worker.js')
-        .then(registration => {
-          console.log('service worker registration successful')
+        .then(() => {
+          console.log('service worker registration successful'); // eslint-disable-line
         })
-        .catch(err => {
-          console.warn('service worker registration failed', err.message)
-        })
+        .catch((err) => {
+          console.warn('service worker registration failed', err.message); // eslint-disable-line
+        });
     }
   }
   render() {
     return (
       <div>
+        <Head title="home" />
         <Nav />
-    
+
         <div className="hero">
           <h1 className={css.example}>Welcome to Next!</h1>
           <p className="description">To get started, edit <code>pages/index.js</code> and save to reload.</p>
-    
+
           <div className="row">
             <Link href="https://github.com/zeit/next.js#getting-started">
               <a className="card">
@@ -49,7 +51,7 @@ export default class extends React.PureComponent {
             </Link>
           </div>
         </div>
-    
+
         <style jsx>{`
           .hero {
             width: 100%;
